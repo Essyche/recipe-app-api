@@ -16,7 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout
       - name: Test
+<<<<<<< HEAD
         run: docker compose run --rm app sh -c "python manage.py"
+=======
+        run: docker compose run --rm app sh -c "python manage.py wait_for_db && python manage.py test"
+>>>>>>> 1aa3333e077e061441c5c2e6160895e024ce33a8
       - name: Lint
         run: docker compose run --rm app sh -c "flake8"
   
